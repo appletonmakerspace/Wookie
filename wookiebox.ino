@@ -13,7 +13,7 @@ FatReader f;      // This holds the information for the file we're play
 WaveHC wave;      // This is the only wave (audio) object, since we will only play one at a time
 
 int pirPin = 8;
-
+int t = 0;
 //#define DEBOUNCE 100  // button debouncer
 
 // this handy function will return the number of bytes currently free in RAM, great for debugging!   
@@ -145,7 +145,12 @@ void loop() {
     case 10:
       playcomplete("p.WAV");     // I modified the standard demo sketch.  Don't need this.
     */}
-    delay(10000);
+    
+    for(t = 0; t < 15; t+=1)
+    {
+      delay(60000);
+      putstring_nl("minute");
+    }
   }
 
 }
